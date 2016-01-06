@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>.|. Photo Mosaic .|.</title>
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/css/bootstrap-combined.min.css">
+</head>
+
+<body>
+    <div class="content container">
+        <div class="headerBanner">
+            <h3>Photo-Mosaic your Uploaded Image</h3>
+        </div>
+        <!-- fileUploadSection contains the section to display the fileUpload Control -->
+        <div class="fileUploadSection">
+            <input id="mosaicFile" type="file" accept="image/*" autofocus="true" onchange="loadImageToCanvas()">
+            <button id="chooseFile" onclick="clickOnFileInput()" class="btn btn-primary"><i class="icon-file"></i> Choose File</button>
+            <span id="mosaicFileName">Name of the file to be uploaded</span>
+        </div>
+
+        <!-- uploadedImageView displays the uploaded Image with the MosaicIt Button -->
+        <div class="uploadedImageView">
+            <button id="mosaicTheImageBtn" onclick="convertToMosaic()" class="btn btn-primary"><i class="icon-picture"></i> Mosaic It</button>
+            <div class="uploadedImageContainer">
+                <canvas id="imageCanvas" width="200" height="200"></canvas>
+            </div>
+        </div>
+
+        <!--  tranformedImageView displays the image after being converted to corresponding mosaic -->
+        <div id="tranformedImageView">
+        </div>
+        <div id="loadingPlaceHolder">
+            -- Kindly click the
+            <strong>Mosaic It</strong> button to start the transformation --
+        </div>
+    </div>
+    <script type="text/javascript" src="js/mosaic.js"></script>
+    <script type="text/javascript" src="js/client.js"></script>
+</body>
+
+</html>
+<style>
+    .content {
+        margin: 50px;
+        border: 1px solid #CCC;
+        border-radius: 5px;
+    }
+
+    .headerBanner {
+        font-size: 36px;
+        font-family: cursive;
+        border-bottom: 1px solid #CCC;
+    }
+
+    .fileUploadSection {
+        margin: 10px;
+    }
+
+    .headerBanner h3 {
+        margin-left: 10px;
+    }
+
+    .uploadedImageView,
+    #tranformedImageView {
+        padding: 10px;
+        border-top: 1px solid #CCC;
+    }
+
+    #mosaicFile {
+        display: none;
+    }
+
+    #mosaicTheImageBtn {
+        display: none;
+        margin-bottom: 10px;
+    }
+
+    #mosaicFileName {
+        font-style: italic;
+        margin-left: 10px;
+    }
+
+    #loadingPlaceHolder {
+        display: none;
+        margin: 0px 0px 10px 10px;
+    }
+</style>
